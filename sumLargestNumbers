@@ -1,0 +1,30 @@
+const sumLargestNumbers = function(data) {
+  // Put your solution here
+  let first =data[0];
+  let second = data[1];
+  
+//   if (first > second){
+//       first = data[0];
+//       second = data[1];
+//   } else {
+//       second = data[0];
+//       first = data[1];
+//   }
+  
+  for (let i = 2; i <= data.length; i++){
+      
+      if (data[i] > first && data[i] > second && first > second){
+          first = data[i];
+    //   second = first;
+    //   first = data[i];
+      }
+      else if (data[i] < first && data[i] > second && first > second){
+          second = data[i];
+      }
+      return first + second;
+  }
+};
+
+console.log(sumLargestNumbers([1, 10]));
+console.log(sumLargestNumbers([1, 2, 3]));
+console.log(sumLargestNumbers([10, 4, 34, 6, 92, 2]));
